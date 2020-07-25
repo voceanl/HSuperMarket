@@ -1,0 +1,17 @@
+﻿@using Hippo.SuperMarket.Domain.Entities
+@model IEnumerable<Product>
+@{
+    ViewBag.title = "Products";
+}
+
+@foreach (var p in Model)
+{
+    <div>
+        <h3>@p.Name</h3>
+        @p.Discription
+        <h4>@p.Price.ToString("c")</h4>
+
+    </div>
+
+}
+
