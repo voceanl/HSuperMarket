@@ -17,11 +17,11 @@ namespace Hippo.SuperMarket.DebugConsole
 
             using (var ctx = new EFDbContext())
             {
-                for (int i = 1; i < 3; i++)
+                for (int i = 1; i < 10; i++)
                 {
                     var product = new Product()
                     {
-                        Name = "Lamb",
+                        Name = $"Lamb-{10+i}",
                         Price = 4.99m,
                         Category = "Meat",
                         Description = "Come from Quebec."
@@ -30,11 +30,11 @@ namespace Hippo.SuperMarket.DebugConsole
                     ctx.Products.Add(product);
                 }
 
-                for (int i = 1; i < 5; i++)
+                for (int i = 1; i < 10; i++)
                 {
                     var product = new Product()
                     {
-                        Name = "Lobster",
+                        Name = $"Lobster-{10+i}",
                         Price = 5.99m,
                         Category = "Sea foods",
                         Description = "Come from Nova Scotia."
@@ -43,11 +43,11 @@ namespace Hippo.SuperMarket.DebugConsole
                     ctx.Products.Add(product);
                 }
  
-                for (int i = 1; i < 4; i++)
+                for (int i = 1; i < 10; i++)
                 {
                     var product = new Product()
                     {
-                        Name = "Beef",
+                        Name = $"Beef-{10+i}",
                         Price = 6.99m,
                         Category = "Meat",
                         Description = "Come from Quebec."
