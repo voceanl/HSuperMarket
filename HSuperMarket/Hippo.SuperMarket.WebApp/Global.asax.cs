@@ -13,6 +13,7 @@ namespace Hippo.SuperMarket.WebApp
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            IocConfig.ConfigIoc();
         }
     }
 }

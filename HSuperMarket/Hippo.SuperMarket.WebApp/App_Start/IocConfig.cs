@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using Autofac.Integration.Mvc;
 using Hippo.SuperMarket.Domain.Abstract;
 using Hippo.SuperMarket.Domain.Concrete;
 using System;
@@ -14,9 +15,15 @@ namespace Hippo.SuperMarket.WebApp
         public static void ConfigIoc()
         {
             var builder = new ContainerBuilder();
-            builder.RegisterControllers(typeof(MvcApplication).Assembly).PropertiesAutowired();
-            builder.RegisterInstance<IProductsRepository>(new
-            InMemoryProductsRepository()).PropertiesAutowired();
+
+            builder
+                .RegisterControllers(typeof(MvcApplication).Assembly)
+                .PropertiesAutowired();
+
+            builder
+                .RegisterInstance<IProductsRepository>(new EFProductRepository())
+                .PropertiesAutowired();
+
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
         }
