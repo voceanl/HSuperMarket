@@ -10,7 +10,8 @@ namespace Hippo.SuperMarket.WebApp.Controllers
 {
     public class ProductController : Controller
     {
-        public IProductsRepository ProductsReposotory { get; set; } = new InMemoryProductsRepository();
+        public IProductsRepository ProductsReposotory { get; set; } 
+            = new InMemoryProductsRepository();
 
         public ViewResult List()
         {
